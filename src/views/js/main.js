@@ -458,7 +458,7 @@ var resizePizzas = function(size) {
      pizzas.forEach(function (val) {val.style.width = newwidth});
   }
 
-  changePizzaSizes(allPizzas,newwdith);
+  changePizzaSizes(allPizzas,newwidth);
 
   // User Timing API is awesome
   window.performance.mark("mark_end_resize");
