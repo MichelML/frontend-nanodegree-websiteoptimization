@@ -34,7 +34,7 @@ gulp.task('replace-with-allmincss', ['critical'], () => {
     recursive: true,
     silent: true,
   });
-})
+});
 
 gulp.task('css-merge-minify', () => {
     return gulp.src(['./src/css/*.css'])
@@ -77,15 +77,26 @@ gulp.task('copy-root-files', () => {
 });
 
 gulp.task('htmlmin', ['replace-with-allmincss'], () => {
-    gulp.src('./dist/index.html')
+    return gulp.src('./dist/index.html')
         .pipe(htmlmin({collapseWhitespace: true, minifyCSS:true, minifyJS:true}))
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('views', () => {
-    return gulp.src('./src/views/**')
-        .pipe(gulp.dest('dist/views/'));
+gulp.task('critical-2', () => {
+	return gulp.src('./src/views/pizza.html')
+	        .pipe(critical({base: './src/views/', inline: true, css:['./src/views/css/bootstrap-grid.css','./src/views/css/style.css']}))
+            .pipe(gulp.dest('./dist/views/'));
 });
 
+gulp.task('pizza-script', () => {
+	return gulp.src(['./src/views/js/main.js'])
+		.pipe(uglify())
+		.pipe(gulp.dest('./dist/views/js/'))
+});
 
-gulp.task('default', ['css-merge-minify', 'css-move-minify','scripts1', 'copy-root-files', 'img', 'htmlmin', 'replace-with-allmincss', 'critical', 'views', 'images']);
+gulp.task('pizza-cssmin', ['critical-2'], () => {
+	return gulp.src(['./src/views/css/*.css'])
+		.pipe(minifyCss())
+		.pipe(gulp.dest('./dist/views/css/'))
+});
+gulp.task('default', ['css-merge-minify', 'css-move-minify','scripts1', 'copy-root-files', 'img', 'htmlmin', 'replace-with-allmincss', 'critical', 'images', 'critical-2', 'pizza-script', 'pizza-cssmin']);
