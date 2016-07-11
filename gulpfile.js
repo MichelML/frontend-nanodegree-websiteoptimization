@@ -99,4 +99,5 @@ gulp.task('pizza-cssmin', ['critical-2'], () => {
 		.pipe(minifyCss())
 		.pipe(gulp.dest('./dist/views/css/'))
 });
+
 gulp.task('default', ['css-merge-minify', 'css-move-minify','scripts1', 'copy-root-files', 'img', 'htmlmin', 'replace-with-allmincss', 'critical', 'images', 'critical-2', 'pizza-script', 'pizza-cssmin']);
