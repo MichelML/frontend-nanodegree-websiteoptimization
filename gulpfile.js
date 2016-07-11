@@ -69,8 +69,6 @@ gulp.task('images', () => {
         .pipe(gulp.dest('dist/views/images/'));
 });
 
-
-
 gulp.task('copy-root-files', () => {
     return gulp.src(['./src/index.html'])
         .pipe(gulp.dest('./dist/'));
@@ -94,10 +92,17 @@ gulp.task('pizza-script', () => {
 		.pipe(gulp.dest('./dist/views/js/'))
 });
 
-gulp.task('pizza-cssmin', ['critical-2'], () => {
+gulp.task('pizza-cssmin', ['critical-2', 'css-merge-minify-2'], () => {
 	return gulp.src(['./src/views/css/*.css'])
 		.pipe(minifyCss())
 		.pipe(gulp.dest('./dist/views/css/'))
 });
 
-gulp.task('default', ['css-merge-minify', 'css-move-minify','scripts1', 'copy-root-files', 'img', 'htmlmin', 'replace-with-allmincss', 'critical', 'images', 'critical-2', 'pizza-script', 'pizza-cssmin']);
+gulp.task('css-merge-minify-2', () => {
+    return gulp.src(['./src/views/css/*.css'])
+        .pipe(concat('all.min.css'))
+        .pipe(minifyCss())
+        .pipe(gulp.dest('./src/views/css/'));
+});
+
+gulp.task('default', ['css-merge-minify', 'css-move-minify','scripts1', 'copy-root-files', 'img', 'htmlmin', 'replace-with-allmincss', 'critical', 'images', 'critical-2', 'pizza-script', 'pizza-cssmin', 'css-merge-minify-2']);
