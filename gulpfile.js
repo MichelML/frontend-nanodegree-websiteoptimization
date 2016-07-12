@@ -1,11 +1,25 @@
 /*AUTOMATED TASKS TO OPTIMIZE index.html AND pizza.html rendering*/
 
-/* PART 1 - optimize index.html
+/* PART 1 - optimize index.html to achieve a pagespeed score of at least 90 for mobile and desktop
  *
+ * 1. Optimized css rendering by eliminating blocking css rules
+ * 2. Merged and minified css files 
+ * 3. Optimized images
+ * 4. Minified javascript files
+ * 5. Minified html files
+ */
+
+/* PART 2 - Optimizing Frames Per Second in pizza.html
  *
+ * 1. Optimized css rendering by eliminating blocking css rules
+ * 2. Merged and minified css files
+ * 3. Optimized and resized images
+ * 4. Refactored the pizza resizing function to resize the pizzas under 5ms
+ * 5. Eliminated the moving pizzas background in main.js and index.html
+ * 6. minified main.js and pizza.html
 
 
-/*neccessary packages for build process*/
+/*necessary packages for build process*/
 const gulp = require('gulp'),
     concat = require('gulp-concat'),
     minifyCss = require('gulp-minify-css'),
