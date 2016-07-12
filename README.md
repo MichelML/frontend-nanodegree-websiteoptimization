@@ -2,6 +2,7 @@
 Our challenge was to optimize [this online portfolio](https://github.com/MichelML/frontend-nanodegree-websiteoptimization) for speed. In particular, we needed to optimize the critical rendering path and make these pages render as quickly as possible by applying the techniques we have picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
 
 This project was divided in two parts:   
+
 1. Optimize PageSpeed Insights score for index.html (must score 90 for mobile and desktop)   
 2. Optimize Frames per Second in pizza.html  
 
