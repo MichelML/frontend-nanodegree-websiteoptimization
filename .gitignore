@@ -41,3 +41,6 @@ node_modules/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# weird .something files #
+.README*
