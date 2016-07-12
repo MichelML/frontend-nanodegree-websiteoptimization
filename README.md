@@ -3,14 +3,14 @@ Our challenge was to optimize [this online portfolio](https://github.com/MichelM
 
 This project was divided in two parts:   
 
-1. Optimize PageSpeed Insights score for index.HTML (must score 90 for mobile and desktop)   
-2. Optimize Frames per Second in pizza.HTML  
+1. Optimize PageSpeed Insights score for index.html (must score 90 for mobile and desktop)   
+2. Optimize Frames per Second in pizza.html  
 
 The final web pages for the two parts of the project are accessible here: 
-- [Part 1 - index.HTML](https://michelml.github.io/frontend-nanodegree-websiteoptimization/dist/)
-- [Part 2 - pizza.HTML](https://michelml.github.io/frontend-nanodegree-websiteoptimization/dist/views/pizza.html)
+- [Part 1 - index.html](https://michelml.github.io/frontend-nanodegree-websiteoptimization/dist/)
+- [Part 2 - pizza.html](https://michelml.github.io/frontend-nanodegree-websiteoptimization/dist/views/pizza.html)
 
-## Part 1 - Optimize PageSpeed Insights score for index.HTML
+## Part 1 - Optimize PageSpeed Insights score for index.html
 Steps taken to obtain a score of 90 for mobile and desktop were:  
 
 1. Optimization of CSS rules rendering by eliminating blocking CSS rules  
@@ -19,23 +19,23 @@ Steps taken to obtain a score of 90 for mobile and desktop were:
   * [Optimizilla](http://optimizilla.com/) was used to compress the files  
   * [PicResize](http://www.picresize.com/) was used to resize images size  
 4. Minifying JavaScript files  
-5. Minifying index.HTML  
+5. Minifying index.html  
 
-## Part 2 - Optimize Frames Per Second in pizza.HTML
+## Part 2 - Optimize Frames Per Second in pizza.html
 Steps taken to obtain 1) a rendering of 60 fps when scrolling, and 2) an operation duration of under 5ms when resizing the pizzas:   
 
-1. Optimized CSS rendering by eliminating blocking CSS rules  
-2. Merged and minified CSS files  
-3. Optimized and resized images  
+1. Optimization of CSS rules rendering by eliminating blocking CSS rules  
+2. Merging and minification of CSS files  
+3. Optimization and resizing of images  
   * [Optimizilla](http://optimizilla.com/) was used to compress the files  
   * [PicResize](http://www.picresize.com/) was used to resize images size  
-4. Refactored the pizza resizing function to resize the pizzas under 5ms  
-5. Eliminated the moving pizzas background in main.JS and index.HTML  
-6. minified main.JS and pizza.HTML  
+4. Refactoring the pizza resizing function in __main.js__ in order to resize the pizzas under 5ms time  
+5. Eliminating the moving pizzas background in main.js and index.html  
+6. Minification of main.js and pizza.html  
  
 ## About the process
 
-Most of the tasks were automated with [Gulp](http://gulpJS.com/). However, some taks were done by hand since they not fit automation:  
+Most of the tasks were automated with [Gulp](http://gulpJS.com/). However, some tasks were done by hand since it did not make sense to automate them due to their singularity (needed to be executed one time) or complexity:  
 
 1. Code changes in HTML, CSS, and JS files  
 2. Optimization and resizing of images  
@@ -43,7 +43,7 @@ Most of the tasks were automated with [Gulp](http://gulpJS.com/). However, some 
 
 ## Task runner installation  
 
-You can run the task runner easily by doing the following steps (Note that you will need to have `npm`, `node.js` installed locally on your computeri. You will also need to have gulp installed globally by running `npm install -g gulp` from your terminal):  
+You can run the task runner easily by doing the following steps (Note that you will need to have `npm`, `node.js` installed locally on your computer. You will also need to have gulp installed globally by running `npm install -g gulp` from your terminal):  
 
 #### Step 1  
 Clone the current repository in your prefered local directory:   
