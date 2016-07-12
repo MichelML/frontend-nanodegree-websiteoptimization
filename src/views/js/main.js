@@ -453,11 +453,13 @@ var resizePizzas = function(size) {
   //modifications made:
   //the query selector is called only once and the results is stored in allPizzas
   //allPizzas, dx, and newwidth are declared outside the loop, computing the variables only once
-  //the loop is thus called afterward with the array allPizzas and the constant newwidth
-  function changePizzaSizes() {
-    var allPizzas = document.querySelectorAll(".randomPizzaContainer"),
+  //the function is thus called afterward with the array allPizzas and the constant newwidth
+  //the variables are declared outside the function so the computation will already made when the function will be called
+  var allPizzas = document.querySelectorAll(".randomPizzaContainer"),
         dx = determineDx(allPizzas[0], size),
         newwidth = (allPizzas[0].offsetWidth + dx) + 'px';   
+   
+  function changePizzaSizes() {
     allPizzas.forEach(function (val) {val.style.width = newwidth;});
   }
 
