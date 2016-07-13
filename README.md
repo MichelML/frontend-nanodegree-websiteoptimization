@@ -20,6 +20,7 @@ Steps taken to obtain a score of 90 for mobile and desktop were:
   * [PicResize](http://www.picresize.com/) was used to resize images size  
 4. Minifying JavaScript files  
 5. Minifying index.html  
+6. Adding async tag to JavaScript files integrated in index.html
 
 ## Part 2 - Optimize Frames Per Second in pizza.html
 Steps taken to obtain 1) a rendering of 60 fps when scrolling, and 2) an operation duration of under 5ms when resizing the pizzas:   
